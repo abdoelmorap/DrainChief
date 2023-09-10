@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "979971481027",
+    "project_id": "infix-lms",
+    "storage_bucket": "infix-lms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979971481027:android:8cf0271b6946bcd0a2b176",
+        "android_client_info": {
+          "package_name": "com.infix.lms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979971481027-op0ll35vvf1c9cb9ududfm27a5ih2qi9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxAWDHRMMOsWLcRKbbUG3gyVyggeeWrLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979971481027-op0ll35vvf1c9cb9ududfm27a5ih2qi9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

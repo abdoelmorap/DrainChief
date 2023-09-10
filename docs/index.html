@@ -1,0 +1,3013 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["php","javascript","python"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="php">php</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                                  <a href="#" data-language-name="python">python</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.</p>
+<!-- END_INFO -->
+<h1>Course management</h1>
+<p>APIs for managing course</p>
+<!-- START_ac0fe2d193ef262ac0adfa81d139d7e6 -->
+<h2>Get all courses</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/get-all-courses',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/get-all-courses"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/get-all-courses'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "category_id": 1,
+            "subcategory_id": 1,
+            "quiz_id": null,
+            "user_id": 2,
+            "lang_id": 1,
+            "title": "Managerial Accounting Advance Course",
+            "slug": "managerial-accounting",
+            "duration": "5H",
+            "image": "public\/demo\/course\/image\/1.png",
+            "thumbnail": "public\/demo\/course\/thumb\/1.png",
+            "price": 20,
+            "discount_price": 10,
+            "publish": 1,
+            "status": 1,
+            "level": 2,
+            "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+            "host": "Youtube",
+            "meta_keywords": null,
+            "meta_description": null,
+            "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+            "special_commission": null,
+            "total_enrolled": 1,
+            "reveune": 50,
+            "reveiw": 0,
+            "type": 1,
+            "created_at": null,
+            "updated_at": null,
+            "dateFormat": "17th November 2020",
+            "publishedDate": "17th November 2020 10:40 am",
+            "sumRev": 2,
+            "purchasePrice": 21,
+            "enrollCount": 1
+        }
+    ],
+    "total": 11,
+    "message": "Getting Courses Data"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/get-all-courses</code></p>
+<!-- END_ac0fe2d193ef262ac0adfa81d139d7e6 -->
+<!-- START_26c203cb077925dec60146b5cf196dd5 -->
+<h2>Get Popular courses</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/get-popular-courses',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/get-popular-courses"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/get-popular-courses'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "category_id": 1,
+            "subcategory_id": 1,
+            "quiz_id": null,
+            "user_id": 2,
+            "lang_id": 1,
+            "title": "Managerial Accounting Advance Course",
+            "slug": "managerial-accounting",
+            "duration": "5H",
+            "image": "public\/demo\/course\/image\/1.png",
+            "thumbnail": "public\/demo\/course\/thumb\/1.png",
+            "price": 20,
+            "discount_price": 10,
+            "publish": 1,
+            "status": 1,
+            "level": 2,
+            "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+            "host": "Youtube",
+            "meta_keywords": null,
+            "meta_description": null,
+            "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+            "special_commission": null,
+            "total_enrolled": 1,
+            "reveune": 50,
+            "reveiw": 0,
+            "type": 1,
+            "created_at": null,
+            "updated_at": null,
+            "dateFormat": "17th November 2020",
+            "publishedDate": "17th November 2020 10:40 am",
+            "sumRev": 2,
+            "purchasePrice": 21,
+            "enrollCount": 1
+        }
+    ],
+    "total": 11,
+    "message": "Getting Courses Data"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/get-popular-courses</code></p>
+<!-- END_26c203cb077925dec60146b5cf196dd5 -->
+<!-- START_7a4b739fde5822c7b3d51fedd7ff5c79 -->
+<h2>Get Course Details</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/get-course-details/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/get-course-details/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/get-course-details/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": {
+        "id": 1,
+        "category_id": 1,
+        "subcategory_id": 1,
+        "quiz_id": null,
+        "user_id": 2,
+        "lang_id": 1,
+        "title": "Managerial Accounting Advance Course",
+        "slug": "managerial-accounting",
+        "duration": "5H",
+        "image": "public\/demo\/course\/image\/1.png",
+        "thumbnail": "public\/demo\/course\/thumb\/1.png",
+        "price": 20,
+        "discount_price": 10,
+        "publish": 1,
+        "status": 1,
+        "level": 2,
+        "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+        "host": "Youtube",
+        "meta_keywords": null,
+        "meta_description": null,
+        "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+        "special_commission": null,
+        "total_enrolled": 1,
+        "reveune": 50,
+        "reveiw": 0,
+        "type": 1,
+        "created_at": null,
+        "updated_at": null,
+        "dateFormat": "17th November 2020",
+        "publishedDate": "17th November 2020 10:41 am",
+        "sumRev": 2,
+        "purchasePrice": 21,
+        "enrollCount": 1
+    },
+    "message": "Getting Course Data"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/get-course-details/{id}</code></p>
+<!-- END_7a4b739fde5822c7b3d51fedd7ff5c79 -->
+<!-- START_8a613b84ce4b73db7a9eace6d2539c29 -->
+<h2>Get Top Categories</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/top-categories',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/top-categories"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/top-categories'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "name": "Business",
+            "status": 1,
+            "title": "Voluptas eos placeat",
+            "description": "Laboris Nam laborum voluptatibus dolor aspernatur laboriosam commodo in voluptatem Temporibus eum",
+            "url": "https:\/\/youtu.be\/bG9eMa_025c",
+            "show_home": 1,
+            "position_order": 2,
+            "image": "public\/demo\/category\/image\/1.png",
+            "thumbnail": "public\/demo\/category\/thumb\/1.png",
+            "created_at": null,
+            "updated_at": null,
+            "courseCount": 2,
+            "courses": [
+                {
+                    "id": 1,
+                    "category_id": 1,
+                    "subcategory_id": 1,
+                    "quiz_id": null,
+                    "user_id": 2,
+                    "lang_id": 1,
+                    "title": "Managerial Accounting Advance Course",
+                    "slug": "managerial-accounting",
+                    "duration": "5H",
+                    "image": "public\/demo\/course\/image\/1.png",
+                    "thumbnail": "public\/demo\/course\/thumb\/1.png",
+                    "price": 20,
+                    "discount_price": 10,
+                    "publish": 1,
+                    "status": 1,
+                    "level": 2,
+                    "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                    "host": "Youtube",
+                    "meta_keywords": null,
+                    "meta_description": null,
+                    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                    "special_commission": null,
+                    "total_enrolled": 1,
+                    "reveune": 50,
+                    "reveiw": 0,
+                    "type": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "dateFormat": "17th November 2020",
+                    "publishedDate": "17th November 2020 11:19 am",
+                    "sumRev": 2,
+                    "purchasePrice": 21,
+                    "enrollCount": 1
+                },
+                {
+                    "id": 2,
+                    "category_id": 1,
+                    "subcategory_id": 2,
+                    "quiz_id": null,
+                    "user_id": 2,
+                    "lang_id": 1,
+                    "title": "An Entire MBA in 1 Course:Award Winning Course",
+                    "slug": "an-entire-mba-in-1-courseaward-winning-business-school-prof",
+                    "duration": "5H",
+                    "image": "public\/demo\/course\/image\/2.png",
+                    "thumbnail": "public\/demo\/course\/thumb\/2.png",
+                    "price": 20,
+                    "discount_price": 10,
+                    "publish": 1,
+                    "status": 1,
+                    "level": 2,
+                    "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                    "host": "Youtube",
+                    "meta_keywords": null,
+                    "meta_description": null,
+                    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                    "special_commission": null,
+                    "total_enrolled": 1,
+                    "reveune": 50,
+                    "reveiw": 0,
+                    "type": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "dateFormat": "17th November 2020",
+                    "publishedDate": "17th November 2020 11:19 am",
+                    "sumRev": 2,
+                    "purchasePrice": 22,
+                    "enrollCount": 1
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "3D Modeling",
+            "status": 1,
+            "title": "Voluptas eos placeat",
+            "description": "Laboris Nam laborum voluptatibus dolor aspernatur laboriosam commodo in voluptatem Temporibus eum",
+            "url": "https:\/\/youtu.be\/bG9eMa_025c",
+            "show_home": 1,
+            "position_order": 2,
+            "image": "public\/demo\/category\/image\/2.png",
+            "thumbnail": "public\/demo\/category\/thumb\/2.png",
+            "created_at": null,
+            "updated_at": null,
+            "courseCount": 2,
+            "courses": [
+                {
+                    "id": 3,
+                    "category_id": 2,
+                    "subcategory_id": 3,
+                    "quiz_id": null,
+                    "user_id": 2,
+                    "lang_id": 1,
+                    "title": "Complete Blender Creator:3D Modelling for Beginners",
+                    "slug": "complete-blender-creator-learn-3d-modelling-for-beginners",
+                    "duration": "5H",
+                    "image": "public\/demo\/course\/image\/3.png",
+                    "thumbnail": "public\/demo\/course\/thumb\/3.png",
+                    "price": 20,
+                    "discount_price": 10,
+                    "publish": 1,
+                    "status": 1,
+                    "level": 2,
+                    "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                    "host": "Youtube",
+                    "meta_keywords": null,
+                    "meta_description": null,
+                    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                    "special_commission": null,
+                    "total_enrolled": 1,
+                    "reveune": 50,
+                    "reveiw": 0,
+                    "type": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "dateFormat": "17th November 2020",
+                    "publishedDate": "17th November 2020 11:19 am",
+                    "sumRev": 2,
+                    "purchasePrice": 23,
+                    "enrollCount": 1
+                },
+                {
+                    "id": 4,
+                    "category_id": 2,
+                    "subcategory_id": 4,
+                    "quiz_id": null,
+                    "user_id": 2,
+                    "lang_id": 1,
+                    "title": "Creating 3D environments in Blender",
+                    "slug": "creating-3d-environments-in-blender",
+                    "duration": "5H",
+                    "image": "public\/demo\/course\/image\/4.png",
+                    "thumbnail": "public\/demo\/course\/thumb\/4.png",
+                    "price": 20,
+                    "discount_price": 10,
+                    "publish": 1,
+                    "status": 1,
+                    "level": 2,
+                    "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                    "host": "Youtube",
+                    "meta_keywords": null,
+                    "meta_description": null,
+                    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                    "special_commission": null,
+                    "total_enrolled": 1,
+                    "reveune": 50,
+                    "reveiw": 0,
+                    "type": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "dateFormat": "17th November 2020",
+                    "publishedDate": "17th November 2020 11:20 am",
+                    "sumRev": 2,
+                    "purchasePrice": 24,
+                    "enrollCount": 1
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "UI UX Design",
+            "status": 1,
+            "title": "Voluptas eos placeat",
+            "description": "Laboris Nam laborum voluptatibus dolor aspernatur laboriosam commodo in voluptatem Temporibus eum",
+            "url": "https:\/\/youtu.be\/bG9eMa_025c",
+            "show_home": 1,
+            "position_order": 3,
+            "image": "public\/demo\/category\/image\/3.png",
+            "thumbnail": "public\/demo\/category\/thumb\/3.png",
+            "created_at": null,
+            "updated_at": null,
+            "courseCount": 2,
+            "courses": [
+                {
+                    "id": 5,
+                    "category_id": 3,
+                    "subcategory_id": 5,
+                    "quiz_id": null,
+                    "user_id": 2,
+                    "lang_id": 1,
+                    "title": "Adobe XD Design Essentials - UI UX Design",
+                    "slug": "creating-3d-environments-in-blender",
+                    "duration": "5H",
+                    "image": "public\/demo\/course\/image\/5.png",
+                    "thumbnail": "public\/demo\/course\/thumb\/5.png",
+                    "price": 20,
+                    "discount_price": 10,
+                    "publish": 1,
+                    "status": 1,
+                    "level": 2,
+                    "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                    "host": "Youtube",
+                    "meta_keywords": null,
+                    "meta_description": null,
+                    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                    "special_commission": null,
+                    "total_enrolled": 1,
+                    "reveune": 50,
+                    "reveiw": 0,
+                    "type": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "dateFormat": "17th November 2020",
+                    "publishedDate": "17th November 2020 11:20 am",
+                    "sumRev": 2,
+                    "purchasePrice": 25,
+                    "enrollCount": 1
+                },
+                {
+                    "id": 6,
+                    "category_id": 3,
+                    "subcategory_id": 6,
+                    "quiz_id": null,
+                    "user_id": 2,
+                    "lang_id": 1,
+                    "title": "WEB Design: Using HTML &amp; CSS",
+                    "slug": "design-rules-principles-practices-for-great-ui-design",
+                    "duration": "5H",
+                    "image": "public\/demo\/course\/image\/6.png",
+                    "thumbnail": "public\/demo\/course\/thumb\/6.png",
+                    "price": 20,
+                    "discount_price": 10,
+                    "publish": 1,
+                    "status": 1,
+                    "level": 2,
+                    "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                    "host": "Youtube",
+                    "meta_keywords": null,
+                    "meta_description": null,
+                    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                    "special_commission": null,
+                    "total_enrolled": 1,
+                    "reveune": 50,
+                    "reveiw": 0,
+                    "type": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "dateFormat": "17th November 2020",
+                    "publishedDate": "17th November 2020 11:20 am",
+                    "sumRev": 2,
+                    "purchasePrice": 26,
+                    "enrollCount": 1
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Mobile Development",
+            "status": 1,
+            "title": "Voluptas eos placeat",
+            "description": "Laboris Nam laborum voluptatibus dolor aspernatur laboriosam commodo in voluptatem Temporibus eum",
+            "url": "https:\/\/youtu.be\/bG9eMa_025c",
+            "show_home": 1,
+            "position_order": 4,
+            "image": "public\/demo\/category\/image\/4.png",
+            "thumbnail": "public\/demo\/category\/thumb\/4.png",
+            "created_at": null,
+            "updated_at": null,
+            "courseCount": 2,
+            "courses": [
+                {
+                    "id": 7,
+                    "category_id": 4,
+                    "subcategory_id": 7,
+                    "quiz_id": null,
+                    "user_id": 2,
+                    "lang_id": 1,
+                    "title": "Introduction to Programming and App Development",
+                    "slug": "introduction-to-programming-and-app-development",
+                    "duration": "5H",
+                    "image": "public\/demo\/course\/image\/7.png",
+                    "thumbnail": "public\/demo\/course\/thumb\/7.png",
+                    "price": 20,
+                    "discount_price": 10,
+                    "publish": 1,
+                    "status": 1,
+                    "level": 2,
+                    "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                    "host": "Youtube",
+                    "meta_keywords": null,
+                    "meta_description": null,
+                    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                    "special_commission": null,
+                    "total_enrolled": 1,
+                    "reveune": 50,
+                    "reveiw": 0,
+                    "type": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "dateFormat": "17th November 2020",
+                    "publishedDate": "17th November 2020 11:20 am",
+                    "sumRev": 2,
+                    "purchasePrice": 27,
+                    "enrollCount": 1
+                },
+                {
+                    "id": 8,
+                    "category_id": 4,
+                    "subcategory_id": 8,
+                    "quiz_id": null,
+                    "user_id": 2,
+                    "lang_id": 1,
+                    "title": "The Complete iOS 11 &amp; Swift Developer Course",
+                    "slug": "the-complete-ios-11-swift-developer-course",
+                    "duration": "5H",
+                    "image": "public\/demo\/course\/image\/8.png",
+                    "thumbnail": "public\/demo\/course\/thumb\/8.png",
+                    "price": 20,
+                    "discount_price": 10,
+                    "publish": 1,
+                    "status": 1,
+                    "level": 2,
+                    "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                    "host": "Youtube",
+                    "meta_keywords": null,
+                    "meta_description": null,
+                    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                    "special_commission": null,
+                    "total_enrolled": 1,
+                    "reveune": 50,
+                    "reveiw": 0,
+                    "type": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "dateFormat": "17th November 2020",
+                    "publishedDate": "17th November 2020 11:20 am",
+                    "sumRev": 0,
+                    "purchasePrice": 0,
+                    "enrollCount": 0
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Software Development",
+            "status": 1,
+            "title": "Voluptas eos placeat",
+            "description": "Laboris Nam laborum voluptatibus dolor aspernatur laboriosam commodo in voluptatem Temporibus eum",
+            "url": "https:\/\/youtu.be\/bG9eMa_025c",
+            "show_home": 1,
+            "position_order": 5,
+            "image": "public\/demo\/category\/image\/5.png",
+            "thumbnail": "public\/demo\/category\/thumb\/5.png",
+            "created_at": null,
+            "updated_at": null,
+            "courseCount": 2,
+            "courses": [
+                {
+                    "id": 9,
+                    "category_id": 5,
+                    "subcategory_id": 9,
+                    "quiz_id": null,
+                    "user_id": 2,
+                    "lang_id": 1,
+                    "title": "Complete Python Developer in 2020: Zero to Mastery",
+                    "slug": "complete-python-developer-in-2020",
+                    "duration": "5H",
+                    "image": "public\/demo\/course\/image\/8.png",
+                    "thumbnail": "public\/demo\/course\/thumb\/8.png",
+                    "price": 20,
+                    "discount_price": 10,
+                    "publish": 1,
+                    "status": 1,
+                    "level": 2,
+                    "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                    "host": "Youtube",
+                    "meta_keywords": null,
+                    "meta_description": null,
+                    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                    "special_commission": null,
+                    "total_enrolled": 1,
+                    "reveune": 50,
+                    "reveiw": 0,
+                    "type": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "dateFormat": "17th November 2020",
+                    "publishedDate": "17th November 2020 11:20 am",
+                    "sumRev": 0,
+                    "purchasePrice": 0,
+                    "enrollCount": 0
+                },
+                {
+                    "id": 10,
+                    "category_id": 5,
+                    "subcategory_id": 10,
+                    "quiz_id": null,
+                    "user_id": 2,
+                    "lang_id": 1,
+                    "title": "Master Laravel PHP with basic to advanced project",
+                    "slug": "master-laravel-php-with-basic-to-advanced-project",
+                    "duration": "5H",
+                    "image": "public\/demo\/course\/image\/9.png",
+                    "thumbnail": "public\/demo\/course\/thumb\/9.png",
+                    "price": 20,
+                    "discount_price": 10,
+                    "publish": 1,
+                    "status": 1,
+                    "level": 2,
+                    "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                    "host": "Youtube",
+                    "meta_keywords": null,
+                    "meta_description": null,
+                    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                    "special_commission": null,
+                    "total_enrolled": 1,
+                    "reveune": 50,
+                    "reveiw": 0,
+                    "type": 1,
+                    "created_at": null,
+                    "updated_at": null,
+                    "dateFormat": "17th November 2020",
+                    "publishedDate": "17th November 2020 11:20 am",
+                    "sumRev": 0,
+                    "purchasePrice": 0,
+                    "enrollCount": 0
+                }
+            ]
+        }
+    ],
+    "message": "Getting Top Categories"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/top-categories</code></p>
+<!-- END_8a613b84ce4b73db7a9eace6d2539c29 -->
+<!-- START_4dac15e2ac3511da81e2cb8bec0deea5 -->
+<h2>Search Course</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/search-course',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'title' =&gt; 'rerum',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/search-course"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "title": "rerum"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/search-course'
+payload = {
+    "title": "rerum"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "category_id": 1,
+            "subcategory_id": 1,
+            "quiz_id": null,
+            "user_id": 2,
+            "lang_id": 1,
+            "title": "Managerial Accounting Advance Course",
+            "slug": "managerial-accounting",
+            "duration": "5H",
+            "image": "public\/demo\/course\/image\/1.png",
+            "thumbnail": "public\/demo\/course\/thumb\/1.png",
+            "price": 20,
+            "discount_price": 10,
+            "publish": 1,
+            "status": 1,
+            "level": 2,
+            "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+            "host": "Youtube",
+            "meta_keywords": null,
+            "meta_description": null,
+            "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+            "special_commission": null,
+            "total_enrolled": 1,
+            "reveune": 50,
+            "reveiw": 0,
+            "type": 1,
+            "created_at": null,
+            "updated_at": null,
+            "dateFormat": "17th November 2020",
+            "publishedDate": "17th November 2020 10:40 am",
+            "sumRev": 2,
+            "purchasePrice": 21,
+            "enrollCount": 1
+        }
+    ],
+    "total": 11,
+    "message": "Getting Courses Data"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/search-course</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>Find course by title.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_4dac15e2ac3511da81e2cb8bec0deea5 -->
+<!-- START_59358fcc550e6da736068b8ac9a85ba1 -->
+<h2>Filter Course</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/filter-course',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'category' =&gt; 29739152.678376,
+            'sub_category' =&gt; 501612.7,
+            'level' =&gt; 1219651.825629,
+            'language' =&gt; 32.136258,
+            'min_price' =&gt; 8743.76,
+            'max_price' =&gt; 40.39772,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/filter-course"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "category": 29739152.678376,
+    "sub_category": 501612.7,
+    "level": 1219651.825629,
+    "language": 32.136258,
+    "min_price": 8743.76,
+    "max_price": 40.39772
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/filter-course'
+payload = {
+    "category": 29739152.678376,
+    "sub_category": 501612.7,
+    "level": 1219651.825629,
+    "language": 32.136258,
+    "min_price": 8743.76,
+    "max_price": 40.39772
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "category_id": 1,
+            "subcategory_id": 1,
+            "quiz_id": null,
+            "user_id": 2,
+            "lang_id": 1,
+            "title": "Managerial Accounting Advance Course",
+            "slug": "managerial-accounting",
+            "duration": "5H",
+            "image": "public\/demo\/course\/image\/1.png",
+            "thumbnail": "public\/demo\/course\/thumb\/1.png",
+            "price": 20,
+            "discount_price": 10,
+            "publish": 1,
+            "status": 1,
+            "level": 2,
+            "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+            "host": "Youtube",
+            "meta_keywords": null,
+            "meta_description": null,
+            "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+            "special_commission": null,
+            "total_enrolled": 1,
+            "reveune": 50,
+            "reveiw": 0,
+            "type": 1,
+            "created_at": null,
+            "updated_at": null,
+            "dateFormat": "17th November 2020",
+            "publishedDate": "17th November 2020 10:40 am",
+            "sumRev": 2,
+            "purchasePrice": 21,
+            "enrollCount": 1
+        }
+    ],
+    "total": 11,
+    "message": "Getting Courses Data"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/filter-course</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>number</td>
+<td>optional</td>
+<td>Find course by category.</td>
+</tr>
+<tr>
+<td><code>sub_category</code></td>
+<td>number</td>
+<td>required</td>
+<td>Find course by sub category.</td>
+</tr>
+<tr>
+<td><code>level</code></td>
+<td>number</td>
+<td>optional</td>
+<td>Find course by level.</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>number</td>
+<td>required</td>
+<td>Find course by language.</td>
+</tr>
+<tr>
+<td><code>min_price</code></td>
+<td>number</td>
+<td>optional</td>
+<td>Find course by min price.</td>
+</tr>
+<tr>
+<td><code>max_price</code></td>
+<td>number</td>
+<td>optional</td>
+<td>Find course by max price.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_59358fcc550e6da736068b8ac9a85ba1 -->
+<h1>Frontend Api</h1>
+<p>APIs for managing frontend api</p>
+<!-- START_efaa7cb628c6f592fb374d24bb80a96e -->
+<h2>Cart List</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/cart-list',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/cart-list"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/cart-list'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "course_id": 1,
+            "user_id": 6,
+            "instructor_id": 2,
+            "tracking": "MQKR46KB7JJP",
+            "price": 10,
+            "created_at": "2020-11-17T06:29:05.000000Z",
+            "updated_at": "2020-11-17T06:29:05.000000Z",
+            "course": {
+                "id": 1,
+                "category_id": 1,
+                "subcategory_id": 1,
+                "quiz_id": null,
+                "user_id": 2,
+                "lang_id": 1,
+                "title": "Managerial Accounting Advance Course",
+                "slug": "managerial-accounting",
+                "duration": "5H",
+                "image": "public\/demo\/course\/image\/1.png",
+                "thumbnail": "public\/demo\/course\/thumb\/1.png",
+                "price": 20,
+                "discount_price": 10,
+                "publish": 1,
+                "status": 1,
+                "level": 2,
+                "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+                "host": "Youtube",
+                "meta_keywords": null,
+                "meta_description": null,
+                "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                "special_commission": null,
+                "total_enrolled": 1,
+                "reveune": 50,
+                "reveiw": 0,
+                "type": 1,
+                "created_at": null,
+                "updated_at": null,
+                "dateFormat": "17th November 2020",
+                "publishedDate": "17th November 2020 12:28 pm",
+                "sumRev": 2,
+                "purchasePrice": 21,
+                "enrollCount": 1,
+                "user": {
+                    "id": 2,
+                    "role_id": 2,
+                    "name": "Teacher",
+                    "photo": "public\/infixlms\/img\/admin.png",
+                    "image": "public\/infixlms\/img\/admin.png",
+                    "avatar": "public\/infixlms\/img\/admin.png",
+                    "mobile_verified_at": null,
+                    "email_verified_at": "2020-09-09T10:52:36.000000Z",
+                    "notification_preference": "mail",
+                    "is_active": 1,
+                    "username": "teacher@infixedu.com",
+                    "email": "teacher@infixedu.com",
+                    "email_verify": "0",
+                    "phone": null,
+                    "address": null,
+                    "city": "1374",
+                    "country": "19",
+                    "zip": null,
+                    "dob": null,
+                    "about": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "linkedin": null,
+                    "instagram": null,
+                    "subscribe": 0,
+                    "provider": null,
+                    "provider_id": null,
+                    "status": 1,
+                    "balance": 0,
+                    "currency_id": 112,
+                    "special_commission": 1,
+                    "payout": "Paypal",
+                    "payout_icon": "\/uploads\/payout\/pay_1.png",
+                    "payout_email": "demo@paypal.com",
+                    "referral": "4MLV6zZjd9",
+                    "added_by": 0,
+                    "created_at": "2020-11-16T04:39:07.000000Z",
+                    "updated_at": "2020-11-16T04:39:07.000000Z"
+                }
+            }
+        }
+    ],
+    "message": "Getting Cart info"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/cart-list</code></p>
+<!-- END_efaa7cb628c6f592fb374d24bb80a96e -->
+<!-- START_9575c1f18d0c969487a2a8248ee68400 -->
+<h2>Add to cart</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/add-to-cart/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'query' =&gt; [
+            'id'=&gt; '1.',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/add-to-cart/1"
+);
+
+let params = {
+    "id": "1.",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/add-to-cart/1'
+params = {
+  'id': '1.',
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers, params=params)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": false,
+    "message": "Course already added in your cart"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/add-to-cart/{id}</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>required</td>
+<td>The id of course/quiz</td>
+</tr>
+</tbody>
+</table>
+<!-- END_9575c1f18d0c969487a2a8248ee68400 -->
+<!-- START_9633f6bbc268d920f8f1ef23f4efb702 -->
+<h2>Remove cart</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/remove-to-cart/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'query' =&gt; [
+            'id'=&gt; '1.',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/remove-to-cart/1"
+);
+
+let params = {
+    "id": "1.",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/remove-to-cart/1'
+params = {
+  'id': '1.',
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers, params=params)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": false,
+    "message": "Course removed from your cart"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/remove-to-cart/{id}</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>required</td>
+<td>The id of course/quiz</td>
+</tr>
+</tbody>
+</table>
+<!-- END_9633f6bbc268d920f8f1ef23f4efb702 -->
+<!-- START_99cc3ab7fd02849467c14cd03b760008 -->
+<h2>Apply Coupon</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/apply-coupon',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'code' =&gt; 'newyear2020',
+            'total' =&gt; 5000.0,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/apply-coupon"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "code": "newyear2020",
+    "total": 5000
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/apply-coupon'
+payload = {
+    "code": "newyear2020",
+    "total": 5000
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "message": "Coupon Successful Applied"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/apply-coupon</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code</code></td>
+<td>string</td>
+<td>required</td>
+<td>The code of coupon</td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td>number</td>
+<td>required</td>
+<td>The total of Amount</td>
+</tr>
+</tbody>
+</table>
+<!-- END_99cc3ab7fd02849467c14cd03b760008 -->
+<!-- START_619f467fef6a95e56ccd77ae20f162bb -->
+<h2>Update Profile</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/update-profile',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'Student',
+            'email' =&gt; 'user@email.com',
+            'phone' =&gt; '01711223344',
+            'address' =&gt; 'Dhaka,Bangladesh',
+            'city' =&gt; 'Dhaka',
+            'country' =&gt; 'Bangladesh',
+            'zip' =&gt; '1200',
+            'about' =&gt; 'something.....',
+            'image' =&gt; 'image.png',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/update-profile"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "name": "Student",
+    "email": "user@email.com",
+    "phone": "01711223344",
+    "address": "Dhaka,Bangladesh",
+    "city": "Dhaka",
+    "country": "Bangladesh",
+    "zip": "1200",
+    "about": "something.....",
+    "image": "image.png"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/update-profile'
+payload = {
+    "name": "Student",
+    "email": "user@email.com",
+    "phone": "01711223344",
+    "address": "Dhaka,Bangladesh",
+    "city": "Dhaka",
+    "country": "Bangladesh",
+    "zip": "1200",
+    "about": "something.....",
+    "image": "image.png"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "message": "Password has been changed"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/update-profile</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of User</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of User</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The phone number of User</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td>string</td>
+<td>required</td>
+<td>The address of User</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>string</td>
+<td>required</td>
+<td>The city of User</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td>string</td>
+<td>required</td>
+<td>The country of User</td>
+</tr>
+<tr>
+<td><code>zip</code></td>
+<td>string</td>
+<td>required</td>
+<td>The zip of User</td>
+</tr>
+<tr>
+<td><code>about</code></td>
+<td>string</td>
+<td>required</td>
+<td>The about of User</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>file</td>
+<td>optional</td>
+<td>The profile image of User</td>
+</tr>
+</tbody>
+</table>
+<!-- END_619f467fef6a95e56ccd77ae20f162bb -->
+<!-- START_316a4c3b4f6a4c4ff34e5893943cdebd -->
+<h2>Countries</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/countries',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/countries"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/countries'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "name": "Afghanistan"
+        }
+    ],
+    "message": "Operation successful"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/countries</code></p>
+<!-- END_316a4c3b4f6a4c4ff34e5893943cdebd -->
+<!-- START_52967cad166f2214addb421e06d98078 -->
+<h2>Cities</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/cities/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'query' =&gt; [
+            'country_id'=&gt; '1.',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/cities/1"
+);
+
+let params = {
+    "country_id": "1.",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/cities/1'
+params = {
+  'country_id': '1.',
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers, params=params)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "name": "Dhaka"
+        }
+    ],
+    "message": "Operation successful"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/cities/{country_id}</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>country_id</code></td>
+<td>required</td>
+<td>The id of course/quiz</td>
+</tr>
+</tbody>
+</table>
+<!-- END_52967cad166f2214addb421e06d98078 -->
+<!-- START_2792e775802e4d178c343254bfc8701e -->
+<h2>My Courses</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/my-courses',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/my-courses"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/my-courses'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "category_id": 1,
+            "subcategory_id": 1,
+            "quiz_id": null,
+            "user_id": 2,
+            "lang_id": 1,
+            "title": "Managerial Accounting Advance Course",
+            "slug": "managerial-accounting",
+            "duration": "5H",
+            "image": "public\/demo\/course\/image\/1.png",
+            "thumbnail": "public\/demo\/course\/thumb\/1.png",
+            "price": 20,
+            "discount_price": 10,
+            "publish": 1,
+            "status": 1,
+            "level": 2,
+            "trailer_link": "https:\/\/www.youtube.com\/watch?v=mlqWUqVZrHA",
+            "host": "Youtube",
+            "meta_keywords": null,
+            "meta_description": null,
+            "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\r\n            ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+            "special_commission": null,
+            "total_enrolled": 1,
+            "reveune": 50,
+            "reveiw": 0,
+            "type": 1,
+            "created_at": null,
+            "updated_at": null,
+            "dateFormat": "17th November 2020",
+            "publishedDate": "17th November 2020 10:40 am",
+            "sumRev": 2,
+            "purchasePrice": 21,
+            "enrollCount": 1
+        }
+    ],
+    "total": 11,
+    "message": "Getting Courses Data"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/my-courses</code></p>
+<!-- END_2792e775802e4d178c343254bfc8701e -->
+<!-- START_1356c7721ab1ffacd9b07c3ed0917604 -->
+<h2>Review Course</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://uxseven.com/infix_lms3/api/submit-review',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'course_id' =&gt; 1,
+            'review' =&gt; 'Something',
+            'rating' =&gt; 5,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/submit-review"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "course_id": 1,
+    "review": "Something",
+    "rating": 5
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/submit-review'
+payload = {
+    "course_id": 1,
+    "review": "Something",
+    "rating": 5
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "message": "Review Submit Successful"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/submit-review</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>course_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The course_id of course/quiz</td>
+</tr>
+<tr>
+<td><code>review</code></td>
+<td>string</td>
+<td>required</td>
+<td>The review  of course/quiz</td>
+</tr>
+<tr>
+<td><code>rating</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The rating  of course/quiz</td>
+</tr>
+</tbody>
+</table>
+<!-- END_1356c7721ab1ffacd9b07c3ed0917604 -->
+<!-- START_e795fade4d25e2473e7fd22cababfe99 -->
+<h2>Comment Course</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://uxseven.com/infix_lms3/api/comment',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'course_id' =&gt; 1,
+            'comment' =&gt; 'Something',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/comment"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "course_id": 1,
+    "comment": "Something"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/comment'
+payload = {
+    "course_id": 1,
+    "comment": "Something"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "message": "Operation Successful"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/comment</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>course_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The course_id of course/quiz</td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td>string</td>
+<td>required</td>
+<td>The comment  of course/quiz</td>
+</tr>
+</tbody>
+</table>
+<!-- END_e795fade4d25e2473e7fd22cababfe99 -->
+<!-- START_ac901b25dc55df0ac9d914fddc549549 -->
+<h2>Comment Reply Course</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://uxseven.com/infix_lms3/api/comment-reply',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'comment_id' =&gt; 1,
+            'reply' =&gt; 'Something',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/comment-reply"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "comment_id": 1,
+    "reply": "Something"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/comment-reply'
+payload = {
+    "comment_id": 1,
+    "reply": "Something"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "message": "Operation Successful"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/comment-reply</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>comment_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The comment id of Comment</td>
+</tr>
+<tr>
+<td><code>reply</code></td>
+<td>string</td>
+<td>required</td>
+<td>The reply  of Comment</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ac901b25dc55df0ac9d914fddc549549 -->
+<!-- START_39a90a8aa21c67b84cb5193ceac96fc5 -->
+<h2>Available Payment Methods</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/payment-methods',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/payment-methods"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/payment-methods'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": [
+        {
+            "method": "PayPal",
+            "logo": "public\/demo\/gateway\/paypal.png"
+        },
+        {
+            "method": "Stripe",
+            "logo": "public\/demo\/gateway\/stripe.png"
+        },
+        {
+            "method": "PayStack",
+            "logo": "public\/demo\/gateway\/paystack.png"
+        },
+        {
+            "method": "RazorPay",
+            "logo": "public\/demo\/gateway\/razorpay.png"
+        },
+        {
+            "method": "PayTM",
+            "logo": "public\/demo\/gateway\/paytm.png"
+        },
+        {
+            "method": "Bank Payment",
+            "logo": ""
+        },
+        {
+            "method": "Offline Payment",
+            "logo": ""
+        },
+        {
+            "method": "Wallet",
+            "logo": ""
+        }
+    ],
+    "message": "Operation successful"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/payment-methods</code></p>
+<!-- END_39a90a8aa21c67b84cb5193ceac96fc5 -->
+<!-- START_bd19472b413bb0407b0bb5519aa9b8b6 -->
+<h2>Checkout</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://uxseven.com/infix_lms3/api/make-order',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'tracking_id' =&gt; 'repellendus',
+            'billing_address' =&gt; 'minima',
+            'old_billing' =&gt; 20,
+            'first_name' =&gt; 'ex',
+            'last_name' =&gt; 'sit',
+            'country' =&gt; 'facilis',
+            'address1' =&gt; 'consequatur',
+            'city' =&gt; 'ipsum',
+            'phone' =&gt; 'perspiciatis',
+            'email' =&gt; 'repellendus',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/make-order"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "tracking_id": "repellendus",
+    "billing_address": "minima",
+    "old_billing": 20,
+    "first_name": "ex",
+    "last_name": "sit",
+    "country": "facilis",
+    "address1": "consequatur",
+    "city": "ipsum",
+    "phone": "perspiciatis",
+    "email": "repellendus"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/make-order'
+payload = {
+    "tracking_id": "repellendus",
+    "billing_address": "minima",
+    "old_billing": 20,
+    "first_name": "ex",
+    "last_name": "sit",
+    "country": "facilis",
+    "address1": "consequatur",
+    "city": "ipsum",
+    "phone": "perspiciatis",
+    "email": "repellendus"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "message": "Operation Successful"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/make-order</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tracking_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>Tracking Id for make make payment</td>
+</tr>
+<tr>
+<td><code>billing_address</code></td>
+<td>string</td>
+<td>required</td>
+<td>Select &quot;new&quot;</td>
+<td>&quot;previous&quot;</td>
+</tr>
+<tr>
+<td><code>old_billing</code></td>
+<td>integer</td>
+<td>required</td>
+<td>If select Previous billing Address</td>
+</tr>
+<tr>
+<td><code>first_name</code></td>
+<td>string</td>
+<td>required</td>
+<td>If select New billing Address</td>
+</tr>
+<tr>
+<td><code>last_name</code></td>
+<td>string</td>
+<td>required</td>
+<td>If select New billing Address</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td>string</td>
+<td>required</td>
+<td>If select New billing Address</td>
+</tr>
+<tr>
+<td><code>address1</code></td>
+<td>string</td>
+<td>required</td>
+<td>If select New billing Address</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>string</td>
+<td>required</td>
+<td>If select New billing Address</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>If select New billing Address</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>If select New billing Address</td>
+</tr>
+</tbody>
+</table>
+<!-- END_bd19472b413bb0407b0bb5519aa9b8b6 -->
+<!-- START_68665952bdb5ad0971e2d546105909fa -->
+<h2>Payment</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://uxseven.com/infix_lms3/api/make-payment/1/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'query' =&gt; [
+            'response'=&gt; 'laborum',
+            'gateWayName'=&gt; 'sed',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/make-payment/1/1"
+);
+
+let params = {
+    "response": "laborum",
+    "gateWayName": "sed",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/make-payment/1/1'
+params = {
+  'response': 'laborum',
+  'gateWayName': 'sed',
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('POST', url, headers=headers, params=params)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "message": "Successfully Done"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/make-payment/{response}/{gateWayName}</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>response</code></td>
+<td>required</td>
+<td>array Response Form Gateway.</td>
+</tr>
+<tr>
+<td><code>gateWayName</code></td>
+<td>required</td>
+<td>string Gateway Name.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_68665952bdb5ad0971e2d546105909fa -->
+<h1>User management</h1>
+<p>APIs for managing user</p>
+<!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
+<h2>Login user and create token</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://uxseven.com/infix_lms3/api/login',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'email' =&gt; 'ullam',
+            'password' =&gt; 'facere',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "email": "ullam",
+    "password": "facere"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/login'
+payload = {
+    "email": "ullam",
+    "password": "facere"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2UwN2I1ZjY0YzdiZGRlMWYwMjJlZWVhOWJmYzViZDQwZDk0MDM4ZmNhNzhhN2VkN2RkODYyZWU0Y2JhODk4MTZkZmVjMzBkNGYwNTA5MDUiLCJpYXQiOjE2MDU1Mjk1NzEsIm5iZiI6MTYwNTUyOTU3MSwiZXhwIjoxNjM3MDY1NTcxLCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.kxYeLAD_LMkSOs1KigyMnarEI5F8LrhEL1ogNLBdSqmQryfEdkaW1xgDNr1RaDzxLck0_6eQoifJb9n5qP3DD8chqVRS3UXtvGHh6SqB0_YExHkp8o1GHGBG1PgxOFm85QRUJYw8rvxsMo8wcumez4WgsqPIDOJkC9epp7KhCQV0psmsp0-ZCbptZNUabrvtrwaz_dhmFVluLvNrbG5_0pAI6CCOK9cWwv9T6zE5dQDxS-0_CA_LfXfhE9mvg-7rnWVmMqpbPpmpYdbv1tN7w652GbWiTSaYp3Psi_-UuljJ5kmBP_ia5sMYLMJc8VVPQPoNX4sTvQ6HeibpFCsXu3dEs8JrbQl_WI_za9th-G9jOPcAA6kXFrLe6Su84YSMafCjl1-Cc0UczC_S-ziaIn3PMGM04qfBrLmMoM22njBpIZ5U6R34hXe4LEPD1KGkiP7RhO0wi1budJmXoHDQjXWgpaMKH9I053f1hz_REoM0huNvZ0ADrA7Xo_8gWcx5oUM-HvLK80MIm3-f1xrPQW4hwh3r__NrMaLJkpY7yM5de8x_0-6i5vGCiksTl7zbrfCGarS9fo4qmyEN2n6Fns5Pq89iK3uKeBQe2c6QHNIxtDoxladZF9s5UHdp2OjTC4hDahNJxUuwSvo8Cd_MS2TWJhqXeYLGkgh_GpPqCGA",
+    "token_type": "Bearer",
+    "expires_at": "2021-11-16 18:26:11"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email address of the User.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the User.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
+<!-- START_90f45d502fd52fdc0b289e55ba3c2ec6 -->
+<h2>Create user</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://uxseven.com/infix_lms3/api/signup',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'harum',
+            'email' =&gt; 'ipsam',
+            'phone' =&gt; 'repellendus',
+            'password' =&gt; 'occaecati',
+            'password_confirmation' =&gt; 'soluta',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/signup"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "name": "harum",
+    "email": "ipsam",
+    "phone": "repellendus",
+    "password": "occaecati",
+    "password_confirmation": "soluta"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/signup'
+payload = {
+    "name": "harum",
+    "email": "ipsam",
+    "phone": "repellendus",
+    "password": "occaecati",
+    "password_confirmation": "soluta"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/signup</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the User.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email address of the User.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The phone number of the User.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>Set password.</td>
+</tr>
+<tr>
+<td><code>password_confirmation</code></td>
+<td>string</td>
+<td>required</td>
+<td>Set confirm password.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_90f45d502fd52fdc0b289e55ba3c2ec6 -->
+<!-- START_00e7e21641f05de650dbe13f242c6f2c -->
+<h2>Logout user (Revoke the token)</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/logout',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/logout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/logout'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Server Error"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/logout</code></p>
+<!-- END_00e7e21641f05de650dbe13f242c6f2c -->
+<!-- START_2b6e5a4b188cb183c7e59558cce36cb6 -->
+<h2>Get the authenticated User</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://uxseven.com/infix_lms3/api/user',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/user'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/user</code></p>
+<!-- END_2b6e5a4b188cb183c7e59558cce36cb6 -->
+<!-- START_4718503641f9ab71a92dd1627b31628d -->
+<h2>Change Password</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://uxseven.com/infix_lms3/api/change-password',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+            'Authorization' =&gt; 'Bearer {token}',
+        ],
+        'json' =&gt; [
+            'old_password' =&gt; 'eum',
+            'new_password' =&gt; 'similique',
+            'confirm_password' =&gt; 'ab',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://uxseven.com/infix_lms3/api/change-password"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "old_password": "eum",
+    "new_password": "similique",
+    "confirm_password": "ab"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'http://uxseven.com/infix_lms3/api/change-password'
+payload = {
+    "old_password": "eum",
+    "new_password": "similique",
+    "confirm_password": "ab"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer {token}'
+}
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "message": "Password updated successfully."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/change-password</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>old_password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The current password of the User.</td>
+</tr>
+<tr>
+<td><code>new_password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The new password of the User.</td>
+</tr>
+<tr>
+<td><code>confirm_password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The confirm password of the User.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_4718503641f9ab71a92dd1627b31628d -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="php">php</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                                    <a href="#" data-language-name="python">python</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>
